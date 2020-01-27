@@ -11,6 +11,7 @@ Haxbox is a simple collection of provisioning scripts to populate and start a pe
 
 # Project description
 The idea for this project is to provide a basic pentesting environment for infosec beginners.
+
 Current flavors:
 - Vagrant:
     - Debian/buster
@@ -21,12 +22,15 @@ Current flavors:
 You can contact me directly if you would wish to have something added to the current provisioning scripts. Only one requirement: Let's keep it simple.
 
 # Requirements
-Vagrant, virtualbox.
+Vagrant (tested: 2.2.6) and virtualbox (tested: 5.2.34)  OR docker (tested: 18.09.7, build 2d0083d)
 
 # Usage
 Vagrant: self explanatory
+
 Docker: run 
+
 ```docker build -t haxbox:latest .```
+
 In the same folder the Dockerfile is located.
 
 # Disclaimer
