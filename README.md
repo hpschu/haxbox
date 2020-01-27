@@ -20,5 +20,8 @@ Current flavors:
 # Ideas and suggestions
 You can contact me directly if you would wish to have something added to the current provisioning scripts. Only one requirement: Let's keep it simple.
 
+# Requirements
+Vagrant, virtualbox.
+
 # Disclaimer
 This project, the related files and configurations and the environment created with the configurations should NOT be used in criminal purposes. This project is meant for testing and learning about information security only. Usage of these tools and this project in criminal activity is strictly forbidden. HaxBox is licensed under GNU General Public License v3.0.
