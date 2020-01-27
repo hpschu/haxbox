@@ -1,5 +1,9 @@
+# Default settings for installation
+RUN DEFAULTS='-o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"'
+RUN FRONTEND='DEBIAN_FRONTEND=noninteractive'
+
 # Update box
-DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y
+apt-get update && $FRONTEND apt-get upgrade $DEFAULTS -y
 
 echo "deb http://http.us.debian.org/debian buster multiverse" >> /etc/apt/sources.list
 
@@ -9,14 +13,15 @@ apt-get install -y software-properties-common
 add-apt-repository non-free
 
 # Install basic tools
-apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+$FRONTEND apt-get install -y $DEFAULTS \
+    apt-utils \
     vim \
     nmap \
     netcat \
     gnupg2 \
     snapd
 
-apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" curl
+$FRONTEND apt-get install -y $DEFAULTS curl
 
 
 # Install metasploit
@@ -28,7 +33,7 @@ chmod 755 msfinstall
 snap install john-the-ripper
 
 
-apt-get install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
+$FRONTEND apt-get install -y $DEFAULTS \
     nikto \
     hydra \
     sqlmap
